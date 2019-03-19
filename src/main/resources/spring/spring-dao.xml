@@ -35,6 +35,16 @@
             <list><value>classpath*:mapper/*.xml</value></list>
         </property>
         <property name="typeAliasesPackage" value="com.Gruuy.entity"/>
+        <!-- 加载PageHelper插件，指定数据库类型 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <value>dialect=mysql</value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 
     <!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
